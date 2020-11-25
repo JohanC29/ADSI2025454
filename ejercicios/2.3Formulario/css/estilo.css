@@ -1,0 +1,29 @@
+
+.contenedor{
+    background: #fafafa;
+    border: 1px solid #ccc;
+    padding: 40px 16px;
+    margin: 5px 100px;
+    box-shadow: 5px 5px #e0e0e0;
+}
+
+
+.contenedor h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.ejercicio {
+    padding: 16px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    box-shadow: -10px 0px teal ;
+    /*box-shadow: -10px 0px teal;*/
+    margin: 0px 10px;
+}
+
+
+
+.ejercicio h2{
+    margin-top: 0px;
+}
