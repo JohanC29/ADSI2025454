@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio16</title>
+    <title>Ejercicio28</title>
 </head>
 <body>
-    <h1>Ejercicio16</h1>
-    <p>Escribe un programa que diga si un número introducido por teclado es o no primo. Un número
-primo es aquel que sólo es divisible entre él mismo y la unidad.</p>
+    <h1>Ejercicio28</h1>
+    <p>Escribe un programa que calcule el factorial de un número entero leído por teclado.</p>
 
     <form action="#" method="GET">
         <table>
@@ -26,22 +25,10 @@ primo es aquel que sólo es divisible entre él mismo y la unidad.</p>
 <?php
     if(isset($_GET['num'])){
         $num=$_GET['num'];
-        $cont = 0;
-
-        for ($i=1; $i <= $num; $i++) { 
-            if($num!=1 && $num%$i ==0){
-                $cont++;
-            }
-            if($cont>2){
-            break;
-            }
+        $factorial = 1;
+        for ($i=1; $i <=$num ; $i++) { 
+            $factorial = $factorial*$i;
         }
-
-        if($cont==2){
-            echo 'El numero es primo';
-        }else{
-            echo 'El numero no es primo';
-        }
-
+        echo "El factorial de ".$num." es: ".$factorial;
     }
 ?>
