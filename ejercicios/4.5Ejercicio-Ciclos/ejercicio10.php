@@ -20,7 +20,7 @@ if(isset($_GET['suma']) && isset($_GET['num'])&& isset($_GET['contador'])){
     $suma=$_GET['suma'];
     $contador=$_GET['contador'];
 
-    if($num>=0){
+    if($num>0){
         $suma=$suma+$num;
         $contador++;
 
@@ -33,7 +33,7 @@ if(isset($_GET['suma']) && isset($_GET['num'])&& isset($_GET['contador'])){
         </form>
         ';
 
-    }else{
+    }elseif ($num<0){
         $media=$suma/$contador;
         echo '
         

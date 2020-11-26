@@ -31,29 +31,40 @@
 </html>
 <?php
     if(isset($_GET['num1'])&&isset($_GET['num2'])){
-        $numero=$_GET['num1'];
-        $buscar=$_GET['num2'];
+        if($_GET['num1']>0 && $_GET['num2']>=0){
+            $numero=$_GET['num1'];
+            $buscar=$_GET['num2'];
 
-        $cont=1;
-        $aux=$numero;
-        while($aux>9){
-            $aux=$aux/10;    
-            $cont++;
-        }
-        $aux=$numero;
-
-
-
-        $i=1;
-        $texto="";
-        while($aux>0){
-            if($aux%10==$buscar){
-                $texto =($cont-$i+1)."<br>".$texto;
+            $cont=1;
+            $aux=$numero;
+            while($aux>9){
+                $aux=$aux/10;    
+                $cont++;
             }
-            $aux=intval($aux/10);
-            $i++;
+            $aux=$numero;
+
+            $i=1;
+            $texto="";
+            $cont2=0;
+            while($aux>0){
+                if($aux%10==$buscar){
+                    $texto =($cont-$i+1).", ".$texto;
+                    $cont2++;
+                }
+                $aux=intval($aux/10);
+                $i++;
+            }
+            echo "<br>Numero Ingresado: ".$numero."<br>";
+            echo "Numero Buscado: ".$buscar."<br>";
+            if($cont2==0){
+                echo "<br>No se encontro el numero buscado.";
+            }else{
+                echo "Posiciones de izquierda a derecha: ".substr($texto, 0, -2).".";
+            }
+        }else{
+            echo "<br>Debe ingresar numeros mayores a texto.";
         }
-        echo $texto;
+        
 
     }
 ?>
